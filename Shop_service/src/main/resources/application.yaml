@@ -1,38 +1,6 @@
-server:
-  port: 8100
-
 spring:
-  sql:
-    init:
-      mode: always
   application:
     #display name in Eureka
     name: shop
   config:
     import: optional:configserver:http://localhost:8888
-
-  #postgresql connecting
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/project_shop
-    username: postgres
-    password: bestuser
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    defer-datasource-initialization: true
-
-
-management:
-  tracing:
-    sampling:
-      probability: 1.0
-
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
