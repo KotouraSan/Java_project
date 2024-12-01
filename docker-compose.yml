@@ -1,0 +1,32 @@
+services:
+  postgres:
+    container_name: PostgreSQL
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: bestuser
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+  zipkin:
+    container_name: Zipkin
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - zipkin
+
+networks:
+  postgres:
+    driver: bridge
+  zipkin:
+    driver: bridge
+
+volumes:
+  postgres:
+  Zipkin:
