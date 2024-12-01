@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Config_server_service" />
+    <file type="web" url="file://$PROJECT_DIR$/Customer_service" />
+    <file type="web" url="file://$PROJECT_DIR$/Delivery_serivce" />
+    <file type="web" url="file://$PROJECT_DIR$/Discovery_service" />
+    <file type="web" url="file://$PROJECT_DIR$/Gateway_service" />
+    <file type="web" url="file://$PROJECT_DIR$/Order_service" />
+    <file type="web" url="file://$PROJECT_DIR$/Shop_service" />
+  </component>
+  <component name="ProjectRootManager">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Customer_service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Customer_service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java_project.iml" filepath="$PROJECT_DIR$/.idea/Java_project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Order_service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Order_service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Shop_service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Shop_service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Shop_service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Shop_service.test.iml" />
+    </modules>
+  </component>
+</project>
