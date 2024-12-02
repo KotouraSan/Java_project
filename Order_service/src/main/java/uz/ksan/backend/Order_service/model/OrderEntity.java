@@ -20,7 +20,7 @@ public class OrderEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long Id;
     UUID orderId = UUID.randomUUID();
-    Long orderCustomerId;
+    String orderCustomerEmail;
     String orderShippingAddress;
     Boolean orderShippedStatus;
 

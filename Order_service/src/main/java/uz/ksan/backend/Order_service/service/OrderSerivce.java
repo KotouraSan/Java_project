@@ -8,5 +8,5 @@ import java.util.UUID;
 public interface OrderSerivce {
     String saveOrder(OrderEntity orderEntity);
     void deleteOrderByOrderId(UUID orderId);
-    List<OrderEntity> getOrderByCustomerId(Long orderCustomerId);
+    List<OrderEntity> getOrderByCustomerEmail(String  orderCustomerEmail);
 }

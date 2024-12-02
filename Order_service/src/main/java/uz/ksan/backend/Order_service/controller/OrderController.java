@@ -30,8 +30,8 @@ public class OrderController {
         orderService.deleteOrderByOrderId(orderId);
     }
 
-    @GetMapping("{orderCustomerId}")
-    public List<OrderEntity> getOrderByCustomerId(@PathVariable("orderCustomerId") Long orderCustomerId) {
-        return orderService.getOrderByCustomerId(orderCustomerId);
+    @GetMapping("{orderCustomerEmail}")
+    public List<OrderEntity> getOrderByCustomerEmail(@PathVariable("orderCustomerEmail") String orderCustomerEmail) {
+        return orderService.getOrderByCustomerEmail(orderCustomerEmail);
     }
 }

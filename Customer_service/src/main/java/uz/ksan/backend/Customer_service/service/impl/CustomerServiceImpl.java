@@ -29,7 +29,7 @@ public class CustomerServiceImpl implements CustomerService {
         CustomerEntity customerEntity = customerRepository.findCustomerByCustomerEmail(customerEmail)
                 .orElseThrow(() -> new NotFoundException("Customer not found"));
 
-        List<OrderEntity> orders = customerOrderService.getCustomerOrders(customerEntity.getCustomerId());
+        List<OrderEntity> orders = customerOrderService.getCustomerOrders(customerEntity.getCustomerEmail());
 
         FullCustomerResponse fullCustomerResponse = new FullCustomerResponse();
         fullCustomerResponse.setCustomerId(customerEntity.getCustomerId());

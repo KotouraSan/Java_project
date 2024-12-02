@@ -31,7 +31,7 @@ public class OrderServiceImpl implements OrderSerivce {
         orderRepository.delete(findOrder);
     }
 
-    public List<OrderEntity> getOrderByCustomerId(Long orderCustomerId) {
-        return orderRepository.findByOrderCustomerId(orderCustomerId);
+    public List<OrderEntity> getOrderByCustomerEmail(String orderCustomerEmail) {
+        return orderRepository.findByOrderCustomerEmail(orderCustomerEmail);
     }
 }
