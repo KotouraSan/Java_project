@@ -27,5 +27,6 @@ public class MakroEntity implements Serializable, ProductInterface {
     String productDescription;
     Double productPrice;
     Integer stock;
+    String productUrl;
 
 }

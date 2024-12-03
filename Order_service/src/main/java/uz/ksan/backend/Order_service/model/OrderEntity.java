@@ -22,6 +22,7 @@ public class OrderEntity implements Serializable {
     UUID orderId = UUID.randomUUID();
     String orderCustomerEmail;
     String orderShippingAddress;
+    String orderShopAddress;
     Boolean orderShippedStatus;
 
 

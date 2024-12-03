@@ -2,68 +2,70 @@ INSERT INTO shop (shop_rating, shop_address, shop_city, shop_email_address, shop
 INSERT INTO shop (shop_rating, shop_address, shop_city, shop_email_address, shop_name, shop_phone_number, shop_district) VALUES (50, 'ул. Тепамасжид, 13', 'Tashkent', 'Korzinka1@gmail.com','Korzinka','+998 99 999 99 99','мирзо улугбекский район');
 INSERT INTO shop (shop_rating, shop_address, shop_city, shop_email_address, shop_name, shop_phone_number, shop_district) VALUES (70, 'ул. Батыра Закирова, 7', 'Tashkent', 'Galmart@gmail.com','Galmart','+998 88 888 88 88', 'шайхантахурский район');
 
-
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Хлеб', 'Свежий белый хлеб', 3500.00, 100);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Молоко', 'Молоко 2.5% жирности, 1 литр', 6000.00, 80);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Яйца', 'Куриные яйца, десяток', 8000.00, 60);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Сахар', 'Сахар-песок, 1 кг', 7000.00, 50);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Чай', 'Черный чай, 100 г', 12000.00, 40);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Рис', 'Рис длиннозерный, 1 кг', 9000.00, 70);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Макароны', 'Макаронные изделия, 500 г', 5000.00, 90);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Масло растительное', 'Подсолнечное масло, 1 литр', 15000.00, 30);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Соль', 'Поваренная соль, 1 кг', 2000.00, 110);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Мука', 'Пшеничная мука, 2 кг', 8000.00, 60);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Курица', 'Куриное мясо, 1 кг', 20000.00, 50);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Яблоки', 'Свежие яблоки, 1 кг', 10000.00, 70);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Бананы', 'Свежие бананы, 1 кг', 12000.00, 80);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Морковь', 'Свежая морковь, 1 кг', 5000.00, 100);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Картофель', 'Свежий картофель, 1 кг', 4000.00, 120);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Лук', 'Репчатый лук, 1 кг', 3000.00, 110);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Сок яблочный', 'Яблочный сок, 1 литр', 9000.00, 40);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Газированная вода', 'Напиток с газом, 1.5 литра', 8000.00, 60);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Шоколад', 'Молочный шоколад, 100 г', 7000.00, 50);
-INSERT INTO galmart_entity (product_name, product_description, product_price, stock) VALUES ('Печенье', 'Сладкое печенье, 200 г', 6000.00, 70);
-
-
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Хлеб', 'Свежий белый хлеб', 3000.00, 100);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Молоко', 'Молоко 2.5% жирности, 1 литр', 5000.00, 80);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Яйца', 'Куриные яйца, десяток', 7000.00, 60);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Сахар', 'Сахар-песок, 1 кг', 6000.00, 50);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Чай', 'Черный чай, 100 г', 10000.00, 40);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Рис', 'Рис длиннозерный, 1 кг', 8000.00, 70);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Макароны', 'Макаронные изделия, 500 г', 4000.00, 90);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Масло сливочное', 'Сливочное масло, 200 г', 12000.00, 30);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Соль', 'Поваренная соль, 1 кг', 1500.00, 110);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Мука', 'Пшеничная мука, 2 кг', 7000.00, 60);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Курица', 'Куриное мясо, 1 кг', 18000.00, 50);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Яблоки', 'Свежие яблоки, 1 кг', 8000.00, 70);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Бананы', 'Свежие бананы, 1 кг', 10000.00, 80);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Морковь', 'Свежая морковь, 1 кг', 4000.00, 100);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Картофель', 'Свежий картофель, 1 кг', 3000.00, 120);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Лук', 'Репчатый лук, 1 кг', 2500.00, 110);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Сок апельсиновый', 'Апельсиновый сок, 1 литр', 8000.00, 40);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Минеральная вода', 'Минеральная вода, 1.5 литра', 6000.00, 60);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Конфеты', 'Шоколадные конфеты, 200 г', 6000.00, 50);
-INSERT INTO makro_entity (product_name, product_description, product_price, stock) VALUES ('Крекеры', 'Соленые крекеры, 200 г', 5000.00, 70);
+INSERT INTO galmart_entity (product_name, product_description, product_price, stock, product_url) VALUES
+                                                                                                      ('Хлеб', 'Свежая выпечка из муки, основа для завтраков, обедов и ужинов.', 3500.00, 100, 'https://tagilhleb.ru/upload/iblock/515/515831aec3fa50047741c68b170541ac.png'),
+                                                                                                      ('Молоко', 'Напиток с высоким содержанием кальция, полезен для костей.', 6000.00, 80, 'https://calorizator.ru/sites/default/files/imagecache/product_512/product/milk-33.jpg'),
+                                                                                                      ('Яйца', 'Универсальный продукт для приготовления блюд или употребления самостоятельно.', 8000.00, 60, 'https://ss.sport-express.ru/userfiles/materials/189/1894841/full.jpg'),
+                                                                                                      ('Сахар', 'Подсластитель для чая, кофе, выпечки и десертов.', 7000.00, 50, 'https://e1.edimdoma.ru/data/ingredients/0000/2219/2219-ed4_wide.jpg?1531467281'),
+                                                                                                      ('Чай', 'Ароматный напиток для бодрости и расслабления.', 12000.00, 40, 'https://e3.edimdoma.ru/data/fat_tags/0000/1465/1465-ed4_wide.jpg?1515755576'),
+                                                                                                      ('Рис', 'Питательная крупа, основа для гарниров и восточных блюд.', 9000.00, 70, 'https://edaplus.info/food_pictures/rice.jpg'),
+                                                                                                      ('Макароны', 'Любимый гарнир, основа итальянской кухни.', 5000.00, 90, 'https://img.freepik.com/free-photo/lots-macaroni_144627-4254.jpg'),
+                                                                                                      ('Масло растительное', 'Незаменимо для жарки и заправки салатов.', 15000.00, 30, 'https://cdn-img.perekrestok.ru/i/400x400-fit/xdelivery/files/47/84/a78d50827f3735c8f84d72414637.jpg'),
+                                                                                                      ('Соль', 'Основной ингредиент для улучшения вкуса блюд.', 2000.00, 110, 'https://images.prom.ua/3803195741_3803195741.jpg?PIMAGE_ID=3803195741'),
+                                                                                                      ('Мука', 'База для выпечки, панировки и соусов.', 8000.00, 60, 'https://iamfood.pp.ua/image/cache/catalog/0011/21-550x550w.png'),
+                                                                                                      ('Курица', 'Универсальный источник белка для супов, жаркого и запеканок.', 20000.00, 50, 'https://calorizator.ru/sites/default/files/imagecache/product_512/product/chicken-20.jpg'),
+                                                                                                      ('Яблоки', 'Сочный фрукт, богатый витаминами и клетчаткой.', 10000.00, 70, 'https://frutsnab.ru/wa-data/public/shop/products/17/00/17/images/33/33.518x0@2x.jpg'),
+                                                                                                      ('Бананы', 'Сладкий фрукт для перекуса или приготовления смузи.', 12000.00, 80, 'https://здоровое-питание.рф/upload/iblock/aa7/9wg2tb9brd73w5mquwdjl7o4nzdrd0u0/lori_0024286917_bigwww-_1_.jpg'),
+                                                                                                      ('Морковь', 'Овощ, богатый каротином, идеален для супов и салатов.', 5000.00, 100, 'https://здоровое-питание.рф/upload/iblock/fd1/05mamhygu5xgyjrqopi0kw7pkl82xgem/lori_0001275221_bigwww-_1_.jpg'),
+                                                                                                      ('Картофель', 'Основа для пюре, жаркого и запеканок.', 4000.00, 120, 'https://calorizator.ru/sites/default/files/imagecache/product_512/product/potato-1.jpg'),
+                                                                                                      ('Лук', 'Добавляет аромат и вкус любому блюду.', 3000.00, 110, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZJovoWQ5JkXUPFnRpSoNBAHjpl7qrDAdApw&s'),
+                                                                                                      ('Сок яблочный', 'Натуральный напиток, освежает и утоляет жажду.', 9000.00, 40, 'https://shop.belpost.by/upload/iblock/1e6/n4hfop35vlz8c0i9c6wh4q6wf2orjvjn/D_2L_Apple.png'),
+                                                                                                      ('Газированная вода', 'Прохладительный напиток с пузырьками.', 8000.00, 60, 'https://galmart.kz/media/goods/9617c8eeb7ef48b4b867b6a8e3f4ef5b.jpg'),
+                                                                                                      ('Шоколад', 'Сладкий десерт для поднятия настроения.', 7000.00, 50, 'https://static6.depositphotos.com/1098692/603/i/450/depositphotos_6033070-stock-photo-chocolate.jpg'),
+                                                                                                      ('Печенье', 'Хрустящая выпечка к чаю или кофе.', 6000.00, 70, 'https://api.kdvonline.kz/thumbnail/740x494/00/651/651.png');
 
 
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Гречневая крупа', 'Гречка, 1 кг', 7000.00, 80);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Овсяные хлопья', 'Овсяные хлопья, 500 г', 5000.00, 70);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Кефир', 'Кефир 2.5% жирности, 1 литр', 5000.00, 60);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Сыр', 'Твердый сыр, 200 г', 15000.00, 50);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Колбаса', 'Вареная колбаса, 500 г', 16000.00, 40);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Йогурт', 'Фруктовый йогурт, 125 г', 3000.00, 90);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Томатная паста', 'Томатная паста, 250 г', 6000.00, 80);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Грибы', 'Шампиньоны свежие, 1 кг', 12000.00, 30);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Кукуруза консервированная', 'Кукуруза сладкая, 340 г', 5000.00, 70);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Горошек консервированный', 'Зеленый горошек, 400 г', 4500.00, 80);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Кетчуп', 'Томатный кетчуп, 300 г', 4000.00, 100);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Майонез', 'Майонез провансаль, 250 г', 5000.00, 90);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Сосиски', 'Молочные сосиски, 1 кг', 18000.00, 40);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Сухари панировочные', 'Панировочные сухари, 200 г', 2000.00, 110);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Маргарин', 'Маргарин для выпечки, 250 г', 4000.00, 60);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Соки детские', 'Сок мультифрукт, 200 мл', 2500.00, 70);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Зефир', 'Зефир ванильный, 200 г', 6000.00, 50);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Чипсы', 'Картофельные чипсы, 100 г', 5000.00, 80);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Мед', 'Натуральный мед, 250 г', 15000.00, 30);
-INSERT INTO korzinka_entity (product_name, product_description, product_price, stock) VALUES ('Орехи грецкие', 'Очищенные грецкие орехи, 200 г', 12000.00, 40);
+INSERT INTO makro_entity (product_name, product_description, product_price, stock, product_url) VALUES
+                                                                                                    ('Хлеб', 'Свежая выпечка из муки, основа для завтраков, обедов и ужинов.', 3000.00, 100, 'https://tagilhleb.ru/upload/iblock/515/515831aec3fa50047741c68b170541ac.png'),
+                                                                                                    ('Молоко', 'Напиток с высоким содержанием кальция, полезен для костей.', 5000.00, 80, 'https://calorizator.ru/sites/default/files/imagecache/product_512/product/milk-33.jpg'),
+                                                                                                    ('Яйца', 'Универсальный продукт для приготовления блюд или употребления самостоятельно.', 7000.00, 60, 'https://ss.sport-express.ru/userfiles/materials/189/1894841/full.jpg'),
+                                                                                                    ('Сахар', 'Подсластитель для чая, кофе, выпечки и десертов.', 6000.00, 50, 'https://e1.edimdoma.ru/data/ingredients/0000/2219/2219-ed4_wide.jpg?1531467281'),
+                                                                                                    ('Чай', 'Ароматный напиток для бодрости и расслабления.', 10000.00, 40, 'https://e3.edimdoma.ru/data/fat_tags/0000/1465/1465-ed4_wide.jpg?1515755576'),
+                                                                                                    ('Рис', 'Питательная крупа, основа для гарниров и восточных блюд.', 8000.00, 70, 'https://edaplus.info/food_pictures/rice.jpg'),
+                                                                                                    ('Макароны', 'Любимый гарнир, основа итальянской кухни.', 4000.00, 90, 'https://img.freepik.com/free-photo/lots-macaroni_144627-4254.jpg'),
+                                                                                                    ('Масло сливочное', 'Насыщает вкус выпечки, каш и бутербродов.', 12000.00, 30, 'https://www.asdecor.kz/upload/iblock/37a/j4z1x6fopwf46d7weggmxs1ybu3q6bcr.png'),
+                                                                                                    ('Соль', 'Основной ингредиент для улучшения вкуса блюд.', 1500.00, 110, 'https://images.prom.ua/3803195741_3803195741.jpg?PIMAGE_ID=3803195741'),
+                                                                                                    ('Мука', 'База для выпечки, панировки и соусов.', 7000.00, 60, 'https://iamfood.pp.ua/image/cache/catalog/0011/21-550x550w.png'),
+                                                                                                    ('Курица', 'Универсальный источник белка для супов, жаркого и запеканок.', 18000.00, 50, 'https://calorizator.ru/sites/default/files/imagecache/product_512/product/chicken-20.jpg'),
+                                                                                                    ('Яблоки', 'Сочный фрукт, богатый витаминами и клетчаткой.', 8000.00, 70, 'https://frutsnab.ru/wa-data/public/shop/products/17/00/17/images/33/33.518x0@2x.jpg'),
+                                                                                                    ('Бананы', 'Сладкий фрукт для перекуса или приготовления смузи.', 10000.00, 80, 'https://здоровое-питание.рф/upload/iblock/aa7/9wg2tb9brd73w5mquwdjl7o4nzdrd0u0/lori_0024286917_bigwww-_1_.jpg'),
+                                                                                                    ('Морковь', 'Овощ, богатый каротином, идеален для супов и салатов.', 4000.00, 100, 'https://здоровое-питание.рф/upload/iblock/fd1/05mamhygu5xgyjrqopi0kw7pkl82xgem/lori_0001275221_bigwww-_1_.jpg'),
+                                                                                                    ('Картофель', 'Основа для пюре, жаркого и запеканок.', 3000.00, 120, 'https://calorizator.ru/sites/default/files/imagecache/product_512/product/potato-1.jpg'),
+                                                                                                    ('Лук', 'Добавляет аромат и вкус любому блюду.', 2500.00, 110, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZJovoWQ5JkXUPFnRpSoNBAHjpl7qrDAdApw&s'),
+                                                                                                    ('Сок апельсиновый', 'Витаминный напиток с цитрусовым вкусом.', 8000.00, 40, 'https://cafesahara.ru/upload/iblock/a2d/a2d2ed42c48165a6cd45a8f5dcd12f84.jpg'),
+                                                                                                    ('Минеральная вода', 'Освежающий напиток с полезными минералами.', 6000.00, 60, 'https://calorizator.ru/sites/default/files/imagecache/product_512/product/water-mineral.jpg'),
+                                                                                                    ('Конфеты', 'Сладости, которые радуют в любое время.', 6000.00, 50, 'https://img.freepik.com/premium-photo/sweet-licorice-candy-plate-isolated-white-background-traditional-finnish-sweets_193819-3781.jpg'),
+                                                                                                    ('Крекеры', 'Солёные закуски для перекуса.', 5000.00, 70, 'https://e1.edimdoma.ru/data/ingredients/0000/2456/2456-ed4_wide.jpg?1504519351');
+
+
+INSERT INTO korzinka_entity (product_name, product_description, product_price, stock, product_url) VALUES
+                                                                                                       ('Гречневая крупа', 'Полезный гарнир с высоким содержанием железа.', 7000.00, 80, 'https://images.prom.ua/3786929744_w600_h600_3786929744.jpg'),
+                                                                                                       ('Овсяные хлопья', 'Основа для питательного завтрака.', 5000.00, 70, 'https://ecostoria.ru/images/19820bb1c67e44d0969a68cac51b209a.736x736.jpg'),
+                                                                                                       ('Кефир', 'Ферментированный напиток, полезный для пищеварения.', 5000.00, 60, 'https://api.lochin.uz/media/file/image/2021-01/e17b728f-0fb2-42f6-8042-e2180963ba75.jpg.500x500_q85_crop-scale.jpg'),
+                                                                                                       ('Сыр', 'Универсальная добавка к бутербродам, салатам и пасте.', 15000.00, 50, 'https://images.prom.ua/1088939562_w600_h600_1088939562.jpg'),
+                                                                                                       ('Колбаса', 'Мясной продукт для бутербродов и закусок.', 16000.00, 40, 'https://greenferma.com.ua/image/44499.jpg'),
+                                                                                                       ('Йогурт', 'Лёгкий десерт или перекус с кисломолочным вкусом.', 3000.00, 90, 'https://media.voog.com/0000/0041/5494/photos/4740036013280_Hellus_Vanilje_jogurt_%C5%A1okolaadit%C3%BCkkidega_350g_block.png'),
+                                                                                                       ('Томатная паста', 'Основа для соусов, борща и пиццы.', 6000.00, 80, 'https://domtradicii.ru/wp-content/uploads/2019/01/613743-500x500.jpg'),
+                                                                                                       ('Грибы', 'Насыщают блюда вкусом и текстурой.', 12000.00, 30, 'https://freshmart.com.ua/storage/web/cache/product/1506/gribi-belie.jpeg?w=912&h=690&fit=resize&q=80&fm=pjpg&t=1571622173&s=6f4e20d30a028ca5fd9ef6f9a8e2517c'),
+                                                                                                       ('Кукуруза консервированная', 'Сладкий овощ для салатов и гарниров.', 5000.00, 70, 'https://bonduelle.ru/storage/products/215e5421a320832c47657f70c2c56feb.png'),
+                                                                                                       ('Горошек консервированный', 'Добавляет сочность в салаты и блюда.', 4500.00, 80, 'https://st18.stpulscen.ru/images/product/084/868/048_big.jpg'),
+                                                                                                       ('Кетчуп', 'Универсальный соус для мяса, картофеля и пасты.', 4000.00, 100, 'https://www.produktupiegade.lv/cdn/shop/products/KecupsklasiskaisHeinz850ml_ME59_750x810.jpg?v=1619718780'),
+                                                                                                       ('Майонез', 'Популярная заправка для салатов и бутербродов.', 5000.00, 90, 'https://apeti.ru/upload/iblock/8a8/q86jyqyu86zek9svv5x5e3cchtxftv0v/mayonez_makheev_provansal_50_5_380_g.jpg'),
+                                                                                                       ('Сосиски', 'Удобны для быстрого приготовления блюд.', 18000.00, 40, 'https://dostavo4ka.uz/upload-file/2021/05/05/3692/937e2e87-e485-4999-90b1-029d2428ac76.jpg'),
+                                                                                                       ('Сухари панировочные', 'Для хрустящей корочки в жареных блюдах.', 2000.00, 110, 'https://s.myspar.ru/upload/img/10/1010/101015551.jpg?1707728179'),
+                                                                                                       ('Маргарин', 'Альтернатива сливочному маслу для выпечки.', 4000.00, 60, 'https://irmag.ru/media/cache/catalog_element_popup/uploads/files/2024/06/10/480d1afcfcf1f42bdc1f64064a014dba85a7048c.jpeg'),
+                                                                                                       ('Соки детские', 'Мягкий и натуральный напиток для детей.', 2500.00, 70, 'https://chado.uz/cdn/shop/products/4600338007724.jpg?v=1676419089&width=400'),
+                                                                                                       ('Зефир', 'Лёгкое воздушное лакомство.', 6000.00, 50, 'https://irecommend.ru/sites/default/files/product-images/433607/b027UxVwTJtUORiNMlrQ.jpg'),
+                                                                                                       ('Чипсы', 'Хрустящая закуска для перекуса или вечеринки.', 5000.00, 80, 'https://dostavo4ka.uz/upload-file/2021/05/05/4179/d33d644d-cbea-448c-a5a3-ccc97bb2511d.jpg'),
+                                                                                                       ('Мёд', 'Натуральный подсластитель с уникальным вкусом.', 15000.00, 30, 'https://calorizator.ru/sites/default/files/imagecache/product_512/product/honey-5.jpg'),
+                                                                                                       ('Орехи грецкие', 'Питательный перекус, богатый полезными жирами.', 12000.00, 40, 'https://www.lakomkaspb.ru/admin/photo/f11300.jpg');

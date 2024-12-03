@@ -12,8 +12,6 @@ import uz.ksan.backend.Customer_service.model.FullCustomerResponse;
 import uz.ksan.backend.Customer_service.repository.CustomerRepository;
 import uz.ksan.backend.Customer_service.service.CustomerOrderService;
 import uz.ksan.backend.Customer_service.service.CustomerService;
-
-import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor

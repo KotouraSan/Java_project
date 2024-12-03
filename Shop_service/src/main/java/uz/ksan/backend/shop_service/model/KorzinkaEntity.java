@@ -27,5 +27,6 @@ public class KorzinkaEntity implements Serializable, ProductInterface {
     String productDescription;
     Double productPrice;
     Integer stock;
+    String productUrl;
 
 }
