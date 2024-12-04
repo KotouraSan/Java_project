@@ -22,21 +22,16 @@ public class ShopEntity implements Serializable {
     Long shopId;
 
     @Column(name = "shopName")
-    @ColumnTransformer(write = "LOWER(?)")
     String shopName;
     @Column(name = "shopAddress")
-    @ColumnTransformer(write = "LOWER(?)")
     String shopAddress;
     @Column(name = "shopDistrict")
     Integer shopDistrict;
     @Column(name = "shopCity")
-    @ColumnTransformer(write = "LOWER(?)")
     String shopCity;
     @Column(name = "shopPhoneNumber")
-    @ColumnTransformer(write = "LOWER(?)")
     String shopPhoneNumber;
     @Column(name = "shopEmailAddress")
-    @ColumnTransformer(write = "LOWER(?)")
     String shopEmailAddress;
     Integer shopRating;
 }

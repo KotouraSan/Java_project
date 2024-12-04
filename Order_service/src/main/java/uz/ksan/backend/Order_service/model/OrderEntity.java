@@ -3,6 +3,7 @@ package uz.ksan.backend.Order_service.model;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.ColumnTransformer;
 
 import java.io.Serializable;
 import java.util.UUID;

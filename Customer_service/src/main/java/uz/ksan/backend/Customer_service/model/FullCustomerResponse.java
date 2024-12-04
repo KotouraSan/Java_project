@@ -17,9 +17,7 @@ import java.util.List;
 public class FullCustomerResponse implements Serializable {
 
     Long customerId;
-    @ColumnTransformer(write = "LOWER(?)")
     String customerFullName;
-    @ColumnTransformer(write = "LOWER(?)")
     String customerEmail;
     String customerPhone;
     Integer customerDistrict;

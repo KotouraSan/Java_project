@@ -23,10 +23,8 @@ public class CustomerEntity implements Serializable {
     Long customerId;
 
     @Column(name = "customerFullName")
-    @ColumnTransformer(write = "LOWER(?)")
     String customerFullName;
     @Column(name = "customerEmail")
-    @ColumnTransformer(write = "LOWER(?)")
     String customerEmail;
     String customerPhone;
     @Column(name = "customerDistrict")
