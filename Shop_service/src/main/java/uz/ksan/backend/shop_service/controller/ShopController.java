@@ -45,7 +45,7 @@ public class ShopController {
     }
 
     @GetMapping("f/")
-    public List<ShopEntity> findShopsByFilter(@RequestParam(required = false) String shopDistrict,
+    public List<ShopEntity> findShopsByFilter(@RequestParam(required = false) Integer shopDistrict,
                                               @RequestParam(required = false) String shopCity,
                                               @RequestParam(required = false) Integer shopRating) {
         return shopRepository.findShopsByFilter(shopDistrict, shopCity, shopRating);

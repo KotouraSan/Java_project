@@ -5,9 +5,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.web.bind.annotation.*;
 import uz.ksan.backend.Delivery_serivce.model.DeliveryEntity;
+import uz.ksan.backend.Delivery_serivce.model.FullDeliveryResponse;
 import uz.ksan.backend.Delivery_serivce.repository.DeliveryRepository;
+import uz.ksan.backend.Delivery_serivce.service.DeliveryOrderService;
 import uz.ksan.backend.Delivery_serivce.service.DeliveryService;
 
+import java.util.List;
 import java.util.UUID;
 
 @RequiredArgsConstructor
@@ -19,6 +22,7 @@ public class DeliveryController {
 
     DeliveryService deliveryService;
     DeliveryRepository deliveryRepository;
+    DeliveryOrderService deliveryOrderService;
 
     @PostMapping
     public String saveDeliveryRequest(@RequestBody DeliveryEntity deliveryEntity) {
@@ -35,5 +39,10 @@ public class DeliveryController {
     public String deleteDeliveryByOrderId(@PathVariable UUID deliveryOrderId) {
         deliveryService.deleteDeliveryRequestByDeliveryOrderId(deliveryOrderId);
         return "deleted";
+    }
+
+    @GetMapping("full/{orderId}")
+    public FullDeliveryResponse getFullDelivery(@PathVariable("orderId") UUID orderId) {
+        return deliveryService.getFullDeliveryResponseByUUID(orderId);
     }
 }

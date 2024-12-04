@@ -25,11 +25,10 @@ public class DeliveryEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long Id;
     Boolean deliveryShippedStatus = false;
-    String deliveryShopAddress;
-    String deliveryClientAddress;
     LocalDateTime deliveryTimeStart = LocalDateTime.now();
     LocalDateTime deliveryTimeEnd = LocalDateTime.now().plusMinutes(1);
     Long seconds;
     UUID deliveryOrderId;
+    Long deliveryPrice;
 
 }

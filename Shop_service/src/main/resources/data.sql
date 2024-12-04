@@ -1,6 +1,6 @@
-INSERT INTO shop (shop_rating, shop_address, shop_city, shop_email_address, shop_name, shop_phone_number, shop_district) VALUES (35, 'ул. Амира Темура 100', 'Tashkent', 'Makro@gmail.com','Makro','+998 00 000 00 00', 'юнусабадский район');
-INSERT INTO shop (shop_rating, shop_address, shop_city, shop_email_address, shop_name, shop_phone_number, shop_district) VALUES (50, 'ул. Тепамасжид, 13', 'Tashkent', 'Korzinka1@gmail.com','Korzinka','+998 99 999 99 99','мирзо улугбекский район');
-INSERT INTO shop (shop_rating, shop_address, shop_city, shop_email_address, shop_name, shop_phone_number, shop_district) VALUES (70, 'ул. Батыра Закирова, 7', 'Tashkent', 'Galmart@gmail.com','Galmart','+998 88 888 88 88', 'шайхантахурский район');
+INSERT INTO shop (shop_rating, shop_address, shop_city, shop_email_address, shop_name, shop_phone_number, shop_district) VALUES (35, 'ул. Амира Темура 100', 'Tashkent', 'Makro@gmail.com','Makro','+998 00 000 00 00', 1);
+INSERT INTO shop (shop_rating, shop_address, shop_city, shop_email_address, shop_name, shop_phone_number, shop_district) VALUES (50, 'ул. Тепамасжид, 13', 'Tashkent', 'Korzinka1@gmail.com','Korzinka','+998 99 999 99 99',2);
+INSERT INTO shop (shop_rating, shop_address, shop_city, shop_email_address, shop_name, shop_phone_number, shop_district) VALUES (70, 'ул. Батыра Закирова, 7', 'Tashkent', 'Galmart@gmail.com','Galmart','+998 88 888 88 88', 3);
 
 INSERT INTO galmart_entity (product_name, product_description, product_price, stock, product_url) VALUES
                                                                                                       ('Хлеб', 'Свежая выпечка из муки, основа для завтраков, обедов и ужинов.', 3500.00, 100, 'https://tagilhleb.ru/upload/iblock/515/515831aec3fa50047741c68b170541ac.png'),

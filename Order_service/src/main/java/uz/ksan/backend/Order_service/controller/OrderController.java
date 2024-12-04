@@ -34,4 +34,9 @@ public class OrderController {
     public List<OrderEntity> getOrderByCustomerEmail(@PathVariable("orderCustomerEmail") String orderCustomerEmail) {
         return orderService.getOrderByCustomerEmail(orderCustomerEmail);
     }
+
+    @GetMapping("id/{orderId}")
+    public List<OrderEntity> getOrderByOrderId(@PathVariable("orderId") UUID orderId) {
+        return orderRepository.getOrderByOrderId(orderId);
+    }
 }

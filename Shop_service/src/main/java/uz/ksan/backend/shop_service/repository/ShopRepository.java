@@ -14,10 +14,10 @@ public interface ShopRepository extends JpaRepository<ShopEntity, Long> {
     List<ShopEntity> findAll();
 
     @Query("SELECT param FROM ShopEntity param WHERE " +
-            "(:shopDistrict IS NULL OR LOWER(param.shopDistrict) LIKE LOWER(CONCAT('%', :shopDistrict, '%'))) AND " +
+            "(:shopDistrict IS NULL OR param.shopDistrict = :shopDistrict) AND " +
             "(:shopCity IS NULL OR LOWER(param.shopCity) = LOWER(:shopCity)) AND " +
             "(:shopRating IS NULL OR param.shopRating >= :shopRating)")
-    List<ShopEntity> findShopsByFilter(@Param("shopDistrict") String shopDistrict,
+    List<ShopEntity> findShopsByFilter(@Param("shopDistrict") Integer shopDistrict,
                                        @Param("shopCity") String shopCity,
                                        @Param("shopRating") Integer shopRating);
 

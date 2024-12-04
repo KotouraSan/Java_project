@@ -30,7 +30,6 @@ public class CustomerEntity implements Serializable {
     String customerEmail;
     String customerPhone;
     @Column(name = "customerDistrict")
-    @ColumnTransformer(write = "LOWER(?)")
-    String customerDistrict;
+    Integer customerDistrict;
 
 }

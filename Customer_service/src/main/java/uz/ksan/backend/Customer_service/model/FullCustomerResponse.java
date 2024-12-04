@@ -1,7 +1,9 @@
 package uz.ksan.backend.Customer_service.model;
 
+import jakarta.persistence.Column;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.ColumnTransformer;
 
 import java.io.Serializable;
 import java.util.List;
@@ -15,10 +17,12 @@ import java.util.List;
 public class FullCustomerResponse implements Serializable {
 
     Long customerId;
+    @ColumnTransformer(write = "LOWER(?)")
     String customerFullName;
+    @ColumnTransformer(write = "LOWER(?)")
     String customerEmail;
     String customerPhone;
-    String customerDistrict;
+    Integer customerDistrict;
 
     List<OrderEntity> orders;
 

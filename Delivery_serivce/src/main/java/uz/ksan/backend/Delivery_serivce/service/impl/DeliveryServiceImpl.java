@@ -6,12 +6,15 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import uz.ksan.backend.Delivery_serivce.exceptions.NotFoundException;
 import uz.ksan.backend.Delivery_serivce.model.DeliveryEntity;
+import uz.ksan.backend.Delivery_serivce.model.FullDeliveryResponse;
+import uz.ksan.backend.Delivery_serivce.model.OrderEntity;
 import uz.ksan.backend.Delivery_serivce.repository.DeliveryRepository;
+import uz.ksan.backend.Delivery_serivce.service.DeliveryOrderService;
 import uz.ksan.backend.Delivery_serivce.service.DeliveryService;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.Optional;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -20,7 +23,8 @@ import java.util.UUID;
 @Primary
 public class DeliveryServiceImpl implements DeliveryService {
 
-    final DeliveryRepository deliveryRepository;
+    DeliveryRepository deliveryRepository;
+    DeliveryOrderService deliveryOrderService;
 
     @Override
     public String saveDeliveryRequest(DeliveryEntity deliveryEntity) {
@@ -43,5 +47,20 @@ public class DeliveryServiceImpl implements DeliveryService {
                 .orElseThrow(() -> new NotFoundException("Delivery order not found"));
         order.setSeconds(time);
         return order;
+    }
+
+    public FullDeliveryResponse getFullDeliveryResponseByUUID(UUID deliveryOrderId) {
+        DeliveryEntity deliveryEntity = deliveryRepository.findByDeliveryOrderId(deliveryOrderId)
+                .orElseThrow(() -> new NotFoundException("Delivery order not found"));
+
+        List<OrderEntity> deliveryOrders = deliveryOrderService.getOrderByOrderId(deliveryEntity.getDeliveryOrderId());
+
+        FullDeliveryResponse fullDeliveryResponse = new FullDeliveryResponse();
+        fullDeliveryResponse.setDeliveryOrderId(deliveryOrderId);
+        fullDeliveryResponse.setDeliveryPrice(deliveryEntity.getDeliveryPrice());
+        fullDeliveryResponse.setDeliveryTimeEnd(deliveryEntity.getDeliveryTimeEnd());
+        fullDeliveryResponse.setDeliveryTimeStart(deliveryEntity.getDeliveryTimeStart());
+        fullDeliveryResponse.setOrderInfo(deliveryOrders);
+        return fullDeliveryResponse;
     }
 }

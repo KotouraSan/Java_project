@@ -28,8 +28,7 @@ public class ShopEntity implements Serializable {
     @ColumnTransformer(write = "LOWER(?)")
     String shopAddress;
     @Column(name = "shopDistrict")
-    @ColumnTransformer(write = "LOWER(?)")
-    String shopDistrict;
+    Integer shopDistrict;
     @Column(name = "shopCity")
     @ColumnTransformer(write = "LOWER(?)")
     String shopCity;
