@@ -1,4 +1,4 @@
-package model;
+package uz.ksan.backend.Auth_service.model;
 
 import jakarta.persistence.*;
 import lombok.*;
