@@ -12,6 +12,8 @@ import uz.ksan.backend.Auth_service.model.AuthEntity;
 import uz.ksan.backend.Auth_service.repository.AuthRepository;
 import uz.ksan.backend.Auth_service.service.AuthService;
 
+import java.util.List;
+
 @Service
 @Transactional
 @AllArgsConstructor
@@ -20,7 +22,12 @@ public class AuthServiceImpl implements AuthService {
 
     final AuthRepository authRepository;
     final AuthenticationManager authenticationManager;
+    final JWTService jwtService;
 
+    @Override
+    public List<AuthEntity> getAllUsers() {
+        return authRepository.findAll();
+    }
 
     private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(12);
 
@@ -35,7 +42,7 @@ public class AuthServiceImpl implements AuthService {
         Authentication authentication =
                 authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(auth.getAuthEmail(), auth.getAuthPassword()));
         if(authentication.isAuthenticated()){
-            return "success";
+            return jwtService.generateToken(auth.getAuthEmail());
         }
         return "fail";
     }

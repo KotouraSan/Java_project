@@ -4,13 +4,12 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import uz.ksan.backend.Auth_service.model.AuthEntity;
 import uz.ksan.backend.Auth_service.repository.AuthRepository;
 import uz.ksan.backend.Auth_service.service.AuthService;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -29,5 +28,10 @@ public class AuthController {
     @PostMapping("login")
     public String login(@RequestBody AuthEntity auth) {
         return authService.verify(auth);
+    }
+
+    @GetMapping
+    public List<AuthEntity> getAll() {
+        return authService.getAllUsers();
     }
 }
