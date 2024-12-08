@@ -32,7 +32,7 @@ public class ShopServiceImpl implements uz.ksan.backend.shop_service.service.Sho
 
     @Override
     public ShopEntity updateShop(ShopEntity shop, String shopName) {
-        shopRepository.findByShopName(shopName.toLowerCase())
+        shopRepository.findByShopName(shopName)
                 .orElseThrow(() -> new NoSuchElementException("No shop found with name: " + shopName));
         deleteShopByShopName(shopName);
         return shopRepository.save(shop);

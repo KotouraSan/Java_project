@@ -61,12 +61,13 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerEntity updateCustomer(CustomerEntity customerEntity) {
-        Long tempId = findIdByCustomerEmail(customerEntity.getCustomerEmail());
-        if (findCustomerByCustomerEmail(customerEntity.getCustomerEmail()).isPresent()) {
-            customerRepository.delete(customerEntity);
-        }
-        customerEntity.setCustomerId(tempId);
-        return customerRepository.save(customerEntity);
+        CustomerEntity existingCustomer = findCustomerByCustomerEmail(customerEntity.getCustomerEmail())
+                .orElseThrow(() -> new NotFoundException("Customer not found by email: " + customerEntity.getCustomerEmail()));
+
+        existingCustomer.setCustomerFullName(customerEntity.getCustomerFullName());
+        existingCustomer.setCustomerPhone(customerEntity.getCustomerPhone());
+        existingCustomer.setCustomerDistrict(customerEntity.getCustomerDistrict());
+        return customerRepository.save(existingCustomer);
     }
 
     @Override
