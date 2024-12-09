@@ -1,4 +1,55 @@
 services:
+  config-server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Config_server_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Config_server_service"
+    networks:
+      - app
+        
+  discovery-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Discovery_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Discovery_service"
+    networks:
+      - app
+    depends_on:
+      - config-server
+
+  gateway-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Gateway_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Gateway_service"
+    networks:
+      - app
+    ports:
+      -  "8222:8222"
+    depends_on:
+      - config-server
+      - discovery-service
+
+  auth-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Auth_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Auth_service"
+    networks:
+      - app
+    depends_on:
+      - postgres
+      - discovery-service
+      - config-server
+
   postgres:
     container_name: PostgreSQL
     image: postgres
@@ -8,23 +59,21 @@ services:
       PGDATA: /data/postgres
     volumes:
       - postgres:/data/postgres
-    ports:
-      - "5432:5432"
+      - ./init-scripts:/docker-entrypoint-initdb.d
     networks:
-      - postgres
+      - app
     restart: unless-stopped
+
   zipkin:
     container_name: Zipkin
     image: openzipkin/zipkin
     ports:
       - "9411:9411"
     networks:
-      - zipkin
+      - app
 
 networks:
-  postgres:
-    driver: bridge
-  zipkin:
+  app:
     driver: bridge
 
 volumes:
