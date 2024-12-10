@@ -9,23 +9,23 @@ spring:
       mvc:
         routes:
           - id: shop
-            uri: http://shop-service:8100
+            uri: http://shop-service:80
             predicates:
               - Path=/api/v1/shop/**
           - id: order
-            uri: http://order-service:8200
+            uri: http://order-service:80
             predicates:
               - Path=/api/v1/order/**
           - id: customer
-            uri: http://customer-service:8300
+            uri: http://customer-service:80
             predicates:
               - Path=/api/v1/customer/**
           - id: delivery
-            uri: http://delivery-service:8400
+            uri: http://delivery-service:80
             predicates:
               - Path=/api/v1/delivery/**
           - id: auth
-            uri: http://auth-service:8500
+            uri: http://auth-service:80
             predicates:
               - Path=/api/v1/auth/**
               
@@ -41,4 +41,4 @@ eureka:
     hostname: discovery-service
   client:
     service-url:
-      defaultZone: http://discovery-service:8761/eureka
+      defaultZone: http://discovery-service:80/eureka

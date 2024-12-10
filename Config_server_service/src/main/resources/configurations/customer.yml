@@ -1,5 +1,5 @@
 server:
-  port: 8300
+  port: 80
 
 
 spring:
@@ -34,4 +34,4 @@ eureka:
     hostname: discovery-service
   client:
     service-url:
-      defaultZone: http://discovery-service:8761/eureka
+      defaultZone: http://discovery-service:80/eureka
