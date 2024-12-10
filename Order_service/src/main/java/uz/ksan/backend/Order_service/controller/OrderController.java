@@ -20,6 +20,11 @@ public class OrderController {
     OrderSerivce orderService;
     OrderRepository orderRepository;
 
+    @GetMapping("ping")
+    public String ping() {
+        return "pong";
+    }
+
     @PostMapping
     public String createOrder(@RequestBody OrderEntity orderEntity) {
         return orderService.saveOrder(orderEntity);

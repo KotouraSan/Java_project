@@ -25,6 +25,11 @@ public class CustomerController {
     CustomerRepository customerRepository;
     CustomerOrderService customerOrderService;
 
+    @GetMapping("ping")
+    public String ping() {
+        return "pong";
+    }
+
     @GetMapping("full/{customerEmail}")
     public FullCustomerResponse getFullCustomerResponse(@PathVariable("customerEmail") String customerEmail) {
         return customerService.getFullCustomerResponseByEmail(customerEmail);

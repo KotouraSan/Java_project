@@ -24,6 +24,11 @@ public class DeliveryController {
     DeliveryRepository deliveryRepository;
     DeliveryOrderService deliveryOrderService;
 
+    @GetMapping("ping")
+    public String ping() {
+        return "pong";
+    }
+
     @PostMapping
     public String saveDeliveryRequest(@RequestBody DeliveryEntity deliveryEntity) {
         deliveryService.saveDeliveryRequest(deliveryEntity);

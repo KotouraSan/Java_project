@@ -21,6 +21,11 @@ public class ShopController {
     ShopService shopService;
     ShopRepository shopRepository;
 
+    @GetMapping("ping")
+    public String ping() {
+        return "pong";
+    }
+
     @PostMapping
     public String saveShop(@RequestBody ShopEntity shopEntity) {
         shopService.saveShop(shopEntity);

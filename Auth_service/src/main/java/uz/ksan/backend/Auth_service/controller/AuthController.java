@@ -20,6 +20,11 @@ public class AuthController {
 
     private final AuthService authService;
 
+    @GetMapping("ping")
+    public String ping() {
+        return "pong";
+    }
+
     @PostMapping("register")
     public AuthEntity register(@RequestBody AuthEntity auth) {
         return authService.registerUser(auth);
