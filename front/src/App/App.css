@@ -1,0 +1,57 @@
+header {
+  display: flex;
+  height: 80px;
+  background-color: #019403;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+header ul {
+  display: flex;
+}
+header img {
+  width: 25px;
+  height: 25px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+}
+.logo h1 {
+  cursor: pointer;
+}
+.logo p {
+  margin-top: 5px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.logo p:hover {
+  color: rgb(55, 55, 55);
+}
+header ul {
+  display: flex;
+  column-gap: 20px;
+}
+header li {
+  border: 2px solid white;
+  display: flex;
+  padding: 10px;
+  border-radius: 30px;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  column-gap: 10px;
+}
+header li p {
+  margin-top: 5px;
+}
+header li:hover {
+  background-color: rgb(68, 113, 74);
+}

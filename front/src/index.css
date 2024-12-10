@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: "Orchidea Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.shop-1 {
+  background-color: #03be10;
+  color: white;
+}
+.shop-2 {
+  background-color: #e42e1a;
+  color: white;
+}
+.shop-3 {
+  background-color: rgb(109, 0, 164);
+  color: white;
+}

@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Circe"), url("/public/fonts/CRC55.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: lighter;
+  src: local("Circe Extra Light"),
+    url("/public/fonts/CRC25.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: light;
+  src: local("Circe Light"), url("/public/fonts/CRC35.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: bold;
+  src: local("Circe Bold"), url("/public/fonts/CRC65.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Orchidea Pro";
+  src: url("/public/fonts/OrchideaPro-ExtraBold.eot");
+  src: local("Orchidea Pro ExtraBold"), local("OrchideaPro-ExtraBold"),
+    url("/public/fonts/OrchideaPro-ExtraBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-ExtraBold.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-ExtraBold.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orchidea Pro";
+  src: url("/public/fonts/OrchideaPro-Bold.eot");
+  src: local("Orchidea Pro Bold"), local("OrchideaPro-Bold"),
+    url("/public/fonts/OrchideaPro-Bold.eot?#iefix") format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-Bold.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-Bold.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orchidea Pro";
+  src: url("/public/fonts/OrchideaPro-SemiBold.eot");
+  src: local("Orchidea Pro SemiBold"), local("OrchideaPro-SemiBold"),
+    url("/public/fonts/OrchideaPro-SemiBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-SemiBold.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-SemiBold.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orchidea Pro";
+  src: url("/public/fonts/OrchideaPro-Black.eot");
+  src: local("Orchidea Pro Black"), local("OrchideaPro-Black"),
+    url("/public/fonts/OrchideaPro-Black.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-Black.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-Black.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orchidea Pro";
+  src: url("/public/fonts/OrchideaPro-Regular.eot");
+  src: local("Orchidea Pro Regular"), local("OrchideaPro-Regular"),
+    url("/public/fonts/OrchideaPro-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-Regular.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-Regular.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Orchidea Pro";
+  src: url("/public/fonts/OrchideaPro-Medium.eot");
+  src: local("Orchidea Pro Medium"), local("OrchideaPro-Medium"),
+    url("/public/fonts/OrchideaPro-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-Medium.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-Medium.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Orchidea Pro";
+  src: url("/public/fonts/OrchideaPro-Light.eot");
+  src: local("Orchidea Pro Light"), local("OrchideaPro-Light"),
+    url("/public/fonts/OrchideaPro-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-Light.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-Light.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}

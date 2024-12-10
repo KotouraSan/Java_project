@@ -1,6 +1,131 @@
 services:
+  config-server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Config_server_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Config_server_service"
+    networks:
+      - app
+        
+  discovery-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Discovery_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Discovery_service"
+    networks:
+      - app
+    depends_on:
+      - config-server
+
+  gateway-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Gateway_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Gateway_service"
+    networks:
+      - app
+    ports:
+      -  "8222:8222"
+    depends_on:
+      - config-server
+      - discovery-service
+      - zipkin
+
+  auth-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Auth_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Auth_service"
+    networks:
+      - app
+    depends_on:
+      - postgres
+      - discovery-service
+      - config-server
+      - gateway-service
+
+  customer-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Customer_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Customer_service"
+    networks:
+      - app
+    depends_on:
+      - postgres
+      - discovery-service
+      - config-server
+      - gateway-service
+      - zipkin
+
+  delivery-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Delivery_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Delivery_service"
+    networks:
+      - app
+    depends_on:
+      - postgres
+      - discovery-service
+      - config-server
+      - gateway-service
+      - zipkin
+
+  order-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Order_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Order_service"
+    networks:
+      - app
+    depends_on:
+      - postgres
+      - discovery-service
+      - config-server
+      - gateway-service
+      - zipkin
+
+  shop-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Shop_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Shop_service"
+    networks:
+      - app
+    depends_on:
+      - postgres
+      - discovery-service
+      - config-server
+      - zipkin
+
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - gateway-service
+
   postgres:
-    container_name: PostgreSQL
+    container_name: postgres
     image: postgres
     environment:
       POSTGRES_USER: postgres
@@ -8,25 +133,24 @@ services:
       PGDATA: /data/postgres
     volumes:
       - postgres:/data/postgres
-    ports:
-      - "5432:5432"
+      - ./init-scripts:/docker-entrypoint-initdb.d
     networks:
-      - postgres
+      - app
     restart: unless-stopped
+
   zipkin:
-    container_name: Zipkin
+    container_name: zipkin
     image: openzipkin/zipkin
     ports:
       - "9411:9411"
+    depends_on:
+      - postgres
     networks:
-      - zipkin
+      - app
 
 networks:
-  postgres:
-    driver: bridge
-  zipkin:
+  app:
     driver: bridge
 
 volumes:
   postgres:
-  Zipkin:

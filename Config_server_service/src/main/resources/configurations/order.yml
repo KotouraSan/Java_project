@@ -12,7 +12,7 @@ spring:
   #postgresql connecting
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/project_order
+    url: jdbc:postgresql://postgres:5432/project_order
     username: postgres
     password: bestuser
   jpa:
@@ -26,10 +26,12 @@ management:
   tracing:
     sampling:
       probability: 1.0
+    zipkin:
+      base-url: http://zipkin:9411
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: discovery-service
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://discovery-service:8761/eureka
