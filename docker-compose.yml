@@ -35,6 +35,7 @@ services:
     depends_on:
       - config-server
       - discovery-service
+      - zipkin
 
   auth-service:
     build:
@@ -49,9 +50,73 @@ services:
       - postgres
       - discovery-service
       - config-server
+      - gateway-service
+
+  customer-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Customer_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Customer_service"
+    networks:
+      - app
+    depends_on:
+      - postgres
+      - discovery-service
+      - config-server
+      - gateway-service
+      - zipkin
+
+  delivery-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Delivery_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Delivery_service"
+    networks:
+      - app
+    depends_on:
+      - postgres
+      - discovery-service
+      - config-server
+      - gateway-service
+      - zipkin
+
+  order-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Order_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Order_service"
+    networks:
+      - app
+    depends_on:
+      - postgres
+      - discovery-service
+      - config-server
+      - gateway-service
+      - zipkin
+
+  shop-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        JAR_FILE: "build/libs/Shop_service-0.0.1-SNAPSHOT.jar"
+        SERVICE_PATH: "./Shop_service"
+    networks:
+      - app
+    depends_on:
+      - postgres
+      - discovery-service
+      - config-server
+      - zipkin
 
   postgres:
-    container_name: PostgreSQL
+    container_name: postgres
     image: postgres
     environment:
       POSTGRES_USER: postgres
@@ -65,10 +130,18 @@ services:
     restart: unless-stopped
 
   zipkin:
-    container_name: Zipkin
+    container_name: zipkin
     image: openzipkin/zipkin
+    environment:
+      STORAGE_TYPE: postgres
+      POSTGRES_HOST: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: bestuser
+      POSTGRES_DB: zipkin
     ports:
       - "9411:9411"
+    depends_on:
+      - postgres
     networks:
       - app
 
@@ -78,4 +151,3 @@ networks:
 
 volumes:
   postgres:
-  Zipkin:

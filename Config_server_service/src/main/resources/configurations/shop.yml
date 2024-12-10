@@ -27,6 +27,8 @@ management:
   tracing:
     sampling:
       probability: 1.0
+    zipkin:
+      base-url: http://zipkin:9411
 
 eureka:
   instance:

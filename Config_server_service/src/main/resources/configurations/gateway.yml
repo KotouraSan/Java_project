@@ -28,7 +28,10 @@ spring:
             uri: http://auth-service:8500
             predicates:
               - Path=/api/v1/auth/**
+              -
 management:
   tracing:
     sampling:
       probability: 1.0
+    zipkin:
+      base-url: http://zipkin:9411
