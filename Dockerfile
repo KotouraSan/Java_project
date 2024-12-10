@@ -3,6 +3,8 @@ FROM openjdk:22-jdk-slim
 ARG SERVICE_PATH=test_service
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y curl
+
 COPY ${SERVICE_PATH}/gradlew .
 COPY ${SERVICE_PATH}/gradle/ gradle/
 

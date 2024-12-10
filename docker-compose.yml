@@ -11,7 +11,7 @@ services:
     networks:
       - app
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://localhost:80/api/v1/config/ping || exit 1"]
+      test: ["CMD", "curl", "--fail", "http://localhost:80/api/v1/config/ping"]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -30,7 +30,7 @@ services:
       config-server:
         condition: service_healthy
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://localhost:80/api/v1/discovery/ping || exit 1"]
+      test: ["CMD", "curl", "--fail", "http://localhost:80/api/v1/discovery/ping"]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -55,7 +55,7 @@ services:
       zipkin:
         condition: service_healthy
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://localhost:8222/api/v1/gateway/ping || exit 1"]
+      test: ["CMD", "curl", "--fail", "http://localhost:8222/api/v1/gateway/ping"]
       interval: 30s
       timeout: 10s
       retries: 5
