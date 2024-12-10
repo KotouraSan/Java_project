@@ -1,3 +1,5 @@
+version: "2.4"
+
 services:
   config-server:
     build:
@@ -8,7 +10,13 @@ services:
         SERVICE_PATH: "./Config_server_service"
     networks:
       - app
-        
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:80/api/v1/config/ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+
   discovery-service:
     build:
       context: .
@@ -19,7 +27,14 @@ services:
     networks:
       - app
     depends_on:
-      - config-server
+      config-server:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:80/api/v1/discovery/ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
 
   gateway-service:
     build:
@@ -31,11 +46,20 @@ services:
     networks:
       - app
     ports:
-      -  "8222:8222"
+      - "8222:8222"
     depends_on:
-      - config-server
-      - discovery-service
-      - zipkin
+      config-server:
+        condition: service_healthy
+      discovery-service:
+        condition: service_healthy
+      zipkin:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8222/api/v1/gateway/ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
 
   auth-service:
     build:
@@ -47,10 +71,14 @@ services:
     networks:
       - app
     depends_on:
-      - postgres
-      - discovery-service
-      - config-server
-      - gateway-service
+      postgres:
+        condition: service_healthy
+      discovery-service:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      gateway-service:
+        condition: service_healthy
 
   customer-service:
     build:
@@ -62,11 +90,16 @@ services:
     networks:
       - app
     depends_on:
-      - postgres
-      - discovery-service
-      - config-server
-      - gateway-service
-      - zipkin
+      postgres:
+        condition: service_healthy
+      discovery-service:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      gateway-service:
+        condition: service_healthy
+      zipkin:
+        condition: service_healthy
 
   delivery-service:
     build:
@@ -78,11 +111,16 @@ services:
     networks:
       - app
     depends_on:
-      - postgres
-      - discovery-service
-      - config-server
-      - gateway-service
-      - zipkin
+      postgres:
+        condition: service_healthy
+      discovery-service:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      gateway-service:
+        condition: service_healthy
+      zipkin:
+        condition: service_healthy
 
   order-service:
     build:
@@ -94,11 +132,16 @@ services:
     networks:
       - app
     depends_on:
-      - postgres
-      - discovery-service
-      - config-server
-      - gateway-service
-      - zipkin
+      postgres:
+        condition: service_healthy
+      discovery-service:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      gateway-service:
+        condition: service_healthy
+      zipkin:
+        condition: service_healthy
 
   shop-service:
     build:
@@ -110,10 +153,14 @@ services:
     networks:
       - app
     depends_on:
-      - postgres
-      - discovery-service
-      - config-server
-      - zipkin
+      postgres:
+        condition: service_healthy
+      discovery-service:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+      zipkin:
+        condition: service_healthy
 
   front:
     build:
@@ -122,7 +169,8 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - gateway-service
+      gateway-service:
+        condition: service_healthy
 
   postgres:
     container_name: postgres
@@ -137,6 +185,12 @@ services:
     networks:
       - app
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
   zipkin:
     container_name: zipkin
@@ -144,7 +198,8 @@ services:
     ports:
       - "9411:9411"
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     networks:
       - app
 
