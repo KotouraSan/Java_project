@@ -115,6 +115,15 @@ services:
       - config-server
       - zipkin
 
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - gateway-service
+
   postgres:
     container_name: postgres
     image: postgres
@@ -132,12 +141,6 @@ services:
   zipkin:
     container_name: zipkin
     image: openzipkin/zipkin
-    environment:
-      STORAGE_TYPE: postgres
-      POSTGRES_HOST: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: bestuser
-      POSTGRES_DB: zipkin
     ports:
       - "9411:9411"
     depends_on:
