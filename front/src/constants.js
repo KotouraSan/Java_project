@@ -1,4 +1,4 @@
-export const urlPort = "http://localhost:8222/api/v1/";
+export const urlPort = "http://65.109.173.219:8222/api/v1/";
 export const districts = [
   { id: 1, name: "Юнусабадский район" },
   { id: 2, name: "Мирзо Улугбекский район" },
