@@ -1,0 +1,83 @@
+.buy_page {
+  display: flex;
+  height: 100vh;
+  justify-content: space-between;
+}
+.purchase {
+  width: 30%;
+  border-left: 1px solid #e1e1e1;
+}
+.buy_items {
+  padding: 30px;
+  width: 70%;
+}
+.buy_items h1 {
+  margin-bottom: 20px;
+}
+.buy_items_store {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 90%;
+}
+.buy_item {
+  display: flex;
+  height: 150px;
+  padding: 5px;
+  background-color: #fcf1e6;
+  border-radius: 20px;
+}
+
+.buy_item img {
+  width: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+.buy_item_info {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #003a01;
+  flex: 1;
+}
+.buy_item_info h1 {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.buy_item_info h6 {
+  font-size: 30px;
+}
+.make_login {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  margin-top: 300px;
+}
+.make_login button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  margin-top: 30px;
+  background-color: #007afc;
+  width: 250px;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+.make_login button:hover {
+  background-color: #15629d;
+}
+.buy_item_prices {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.buy_item_prices button {
+  margin-right: 20px;
+}
